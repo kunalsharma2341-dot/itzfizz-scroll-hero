@@ -1,0 +1,27 @@
+NETLIFY DEPLOYMENT
+
+1. Extract this ZIP.
+2. Open https://app.netlify.com/drop and sign in.
+3. Upload the dist folder. It contains index.html, car.png and assets.
+4. Copy the resulting Netlify URL for the live webpage submission.
+
+GITHUB REPOSITORY
+
+Upload the project source files to a GitHub repository. Include src, public,
+index.html, package.json, vite.config.ts, tsconfig.json, postcss.config.js,
+netlify.toml, README.md and .gitignore. Do not upload node_modules.
+Copy the repository URL for the second submission link.
+
+For automatic Netlify deployments, import that repository in Netlify:
+Build command: npm run build
+Publish directory: dist
+Node version: 22
+
+LOCAL USE
+npm install
+npm run dev
+
+BUILD
+npm run build
+
+The dist folder is already built; manual Netlify upload requires no terminal commands.

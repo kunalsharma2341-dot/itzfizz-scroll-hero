@@ -1,0 +1,397 @@
+@import "tailwindcss";
+:root {
+  --paper: #e9e9df;
+  --ink: #19231e;
+  --green: #b5f266;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 24px;
+}
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:focus-visible {
+  outline: 3px solid #428326;
+  outline-offset: 6px;
+}
+.hero {
+  height: 100svh;
+  min-height: 690px;
+  display: flex;
+  flex-direction: column;
+  padding: 0 4vw;
+  overflow: hidden;
+  background: var(--paper);
+}
+header {
+  height: 90px;
+  flex-shrink: 0;
+}
+.brand {
+  font-weight: 900;
+  font-size: 36px;
+  letter-spacing: -2px;
+}
+.brand span {
+  font-size: 13px;
+  vertical-align: top;
+  letter-spacing: 0;
+  margin-left: 3px;
+}
+.header-note {
+  font-size: 12px;
+}
+.status-dot {
+  width: 7px;
+  height: 7px;
+  background: #4d8037;
+  border-radius: 50%;
+}
+.project-link {
+  font-size: 12px;
+  border-bottom: 1px solid;
+  padding-bottom: 4px;
+}
+.intro {
+  padding: 30px 0 24px;
+}
+.eyebrow {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+}
+.intro h1 {
+  font-size: clamp(26px, 6.6vw, 110px);
+  font-weight: 800;
+  line-height: 1.15;
+  display: flex;
+  justify-content: space-between;
+  letter-spacing: -0.035em;
+  margin: 24px 0 12px;
+}
+.letter {
+  display: inline-block;
+}
+.space {
+  width: 2vw;
+}
+.intro-caption {
+  font-size: 13px;
+  color: #58625b;
+}
+.metrics {
+  gap: 12px;
+  margin-bottom: 28px;
+}
+.metric {
+  padding: 20px 22px;
+  border-radius: 4px;
+  min-height: 138px;
+}
+.metric strong {
+  font-size: clamp(34px, 3.8vw, 60px);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -3px;
+}
+.metric p {
+  font-size: 12px;
+  max-width: 145px;
+  line-height: 1.5;
+  margin: 18px 0 0;
+}
+.metric-index {
+  font-size: 10px;
+  opacity: 0.7;
+}
+.lime {
+  background: #d6ed83;
+}
+.blue {
+  background: #a9d5e8;
+}
+.dark {
+  background: #28382e;
+  color: #edf0e7;
+}
+.orange {
+  background: #eea67b;
+}
+.road {
+  position: relative;
+  flex: 1;
+  min-height: 160px;
+  max-height: 260px;
+  margin: 0 -4vw;
+  background: #1c2721;
+  overflow: hidden;
+}
+.road-lines {
+  position: absolute;
+  inset: 15px 0;
+  border-top: 1px solid #788378;
+  border-bottom: 1px solid #788378;
+}
+.road-lines:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 2px;
+  background: repeating-linear-gradient(
+    90deg,
+    #718074 0 34px,
+    transparent 34px 75px
+  );
+}
+.trail {
+  position: absolute;
+  inset: 16px 0;
+  background: var(--green);
+  transform: scaleX(0);
+  transform-origin: left;
+  will-change: transform;
+}
+.road-word {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: clamp(30px, 7vw, 110px);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  opacity: 0.35;
+  white-space: nowrap;
+}
+.car {
+  position: absolute;
+  width: clamp(190px, 26vw, 400px);
+  left: 12px;
+  top: 50%;
+  margin-top: calc(clamp(190px, 26vw, 400px) * -0.2387);
+  will-change: transform;
+  z-index: 2;
+}
+.car-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 10px 8px #0007);
+}
+.start-label,
+.finish-label {
+  position: absolute;
+  bottom: 22px;
+  font-size: 8px;
+  letter-spacing: 2px;
+  color: #d7e2d5;
+  z-index: 3;
+}
+.start-label {
+  left: 4vw;
+}
+.finish-label {
+  right: 4vw;
+}
+.hero-footer {
+  min-height: 70px;
+  flex: 1;
+  max-height: 95px;
+  gap: 24px;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+.progress-track {
+  width: 30%;
+  height: 2px;
+  background: #c4c9bb;
+}
+.progress-fill {
+  height: 100%;
+  background: #294e32;
+  transform: scaleX(0);
+  transform-origin: left;
+  will-change: transform;
+}
+@media (min-width: 1600px) {
+  .intro {
+    padding-top: 40px;
+  }
+  .metrics {
+    margin-bottom: 40px;
+  }
+  .metric {
+    min-height: 170px;
+  }
+}
+@media (max-width: 767px) {
+  .hero {
+    min-height: 690px;
+    padding: 0 5vw;
+  }
+  header {
+    height: 72px;
+  }
+  .brand {
+    font-size: 30px;
+  }
+  .intro {
+    padding: 24px 0 20px;
+  }
+  .intro h1 {
+    font-size: 6.4vw;
+    margin: 28px 0 16px;
+  }
+  .eyebrow {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+  .intro-caption {
+    font-size: 11px;
+  }
+  .metrics {
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+  .metric {
+    padding: 16px;
+    min-height: 114px;
+  }
+  .metric strong {
+    font-size: 38px;
+    letter-spacing: -2px;
+  }
+  .metric p {
+    font-size: 10px;
+    margin-top: 12px;
+  }
+  .road {
+    margin: 0 -5vw;
+    min-height: 150px;
+    max-height: 200px;
+  }
+  .hero-footer {
+    font-size: 7px;
+    min-height: 60px;
+    gap: 12px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .trail,
+  .progress-fill {
+    transform: scaleX(0.18);
+  }
+  .car,
+  .trail,
+  .progress-fill {
+    will-change: auto;
+  }
+}
+.end-section {
+  min-height: 180px;
+  background: #19271f;
+  color: #e8eddf;
+  padding: 40px 5vw;
+  border: 0;
+  font-size: 16px;
+}
+.back-top {
+  font-size: 12px;
+  border-bottom: 1px solid #b5f266;
+  padding-bottom: 6px;
+}
+.intro {
+  padding-bottom: 28px;
+}
+.intro h1 {
+  margin-bottom: 0;
+}
+@media (max-height: 740px) {
+  .hero {
+    min-height: 0;
+    height: 100svh;
+  }
+  header {
+    height: 60px;
+  }
+  .intro {
+    padding: 18px 0;
+  }
+  .intro h1 {
+    margin-top: 18px;
+  }
+  .metrics {
+    margin-bottom: 18px;
+  }
+  .metric {
+    min-height: 104px;
+    padding: 12px 16px;
+  }
+  .metric strong {
+    font-size: 34px;
+  }
+  .metric p {
+    margin-top: 8px;
+  }
+  .hero-footer {
+    min-height: 44px;
+    max-height: 58px;
+  }
+  .road {
+    min-height: 110px;
+  }
+}
+@media (max-height: 500px) and (orientation: landscape) {
+  header {
+    height: 44px;
+  }
+  .intro {
+    padding: 8px 0;
+  }
+  .intro h1 {
+    font-size: 5vw;
+    margin-top: 8px;
+  }
+  .metrics {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    margin-bottom: 12px;
+  }
+  .metric {
+    min-height: 76px;
+    padding: 10px;
+  }
+  .metric strong {
+    font-size: 26px;
+  }
+  .metric p {
+    font-size: 9px;
+    margin-top: 5px;
+  }
+  .road {
+    min-height: 80px;
+  }
+  .car {
+    width: 170px;
+    margin-top: -40.57px;
+  }
+  .hero-footer {
+    min-height: 30px;
+    font-size: 7px;
+  }
+}
