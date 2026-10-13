@@ -1,35 +1,52 @@
-# Itzfizz Scroll Hero
+# Itzfizz Scroll Hero Assignment
 
-A scroll-driven hero section built with React, Tailwind CSS and GSAP.
+This is my frontend assignment for the Itzfizz web development internship.
+The goal was to recreate a smooth scroll-driven hero interaction using React, Tailwind CSS and GSAP.
+
+## What I implemented
+
+- Letter-by-letter intro animation for the main heading
+- Staggered reveal for the statistics cards
+- A car movement that is controlled by scroll progress
+- Scroll-linked road trail and progress bar
+- Responsive movement based on the available road width
+- Reduced-motion support for accessibility
+
+## Tech used
+
+- React + TypeScript
+- Vite
+- Tailwind CSS
+- GSAP + ScrollTrigger
+
+## How the scroll animation works
+
+The hero section stays pinned while the user scrolls. A GSAP timeline uses `ScrollTrigger` with `scrub`, so the car position follows the actual scroll progress instead of playing automatically.
+
+The distance is calculated from the width of the road and the car, which keeps the animation responsive on different screen sizes. The car, trail and progress bar are animated mainly with transforms for smoother performance.
 
 ## Run locally
 
-Requires Node.js 22.13 or newer.
-
-```sh
+```bash
 npm install
 npm run dev
 ```
 
-## Production build
+For a production build:
 
-```sh
+```bash
 npm run build
 npm run preview
 ```
 
-## Deploy to Netlify
+## Deployment
 
-Manual deployment: upload the included `dist` folder through Netlify Drop. Its `index.html` must be at the root of the uploaded folder.
+The project can be deployed directly from GitHub on Netlify. The included `netlify.toml` uses:
 
-GitHub deployment: push this source folder to a repository and import it in Netlify. The included `netlify.toml` sets the build command to `npm run build` and the publish directory to `dist`.
-
-## Animation
-
-The headline and statistics reveal sequentially on load. ScrollTrigger pins the hero and maps scroll progress to car position. Numeric scrub interpolates movement; reverse scrolling reverses it. The car, trail and progress animate with transforms. Geometry is measured during setup/refresh rather than every scroll event. GSAP context cleans up on unmount, including in React StrictMode. Reduced-motion preferences disable pinning and animation.
+- Build command: `npm run build`
+- Publish directory: `dist`
 
 ## Reference
 
-https://paraschaturvedi.github.io/car-scroll-animation/
-
-Car image and example statistics follow the supplied assignment reference. The image license was not supplied in the reference.
+Animation reference provided in the assignment:
+https://paraschaturvedi.github.io/car-scroll-animation
